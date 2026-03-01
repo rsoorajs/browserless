@@ -51,7 +51,7 @@ test('waitUntil auto should generate final pdf once', async t => {
   t.is(pdfCalls, 1)
   t.true(screenshotCalls >= 2)
   t.is(waitUntilAutoCalls, 1)
-  t.deepEqual(domStabilityArgs, { timeout: 1000, idle: 100 })
+  t.is(domStabilityArgs, undefined)
 })
 
 test('waitUntil auto should honor custom waitForDom', async t => {

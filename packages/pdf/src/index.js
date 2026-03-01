@@ -49,6 +49,8 @@ module.exports = ({ goto, ...gotoOpts } = {}) => {
         })
 
       const waitForDomStabilityResult = async page => {
+        if (!waitForDomOpts) return
+
         const result = await pReflect(page.evaluate(waitForDomStability, waitForDomOpts))
         debug(
           'waitForDomStability',
